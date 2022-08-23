@@ -17,8 +17,10 @@ macx {
 }
 
 SOURCES += \
+        Engine/bitmapstore.cpp \
         Engine/gameengine.cpp \
         Engine/screenmanager.cpp \
+        Engine/screenmanagerremotecontrol.cpp \
         Engine/soundengine.cpp \
         main.cpp
 
@@ -35,7 +37,9 @@ DISTFILES += \
         sound/shoot.ogg
 
 HEADERS += \
+    Engine/bitmapstore.h \
     Engine/developstate.h \
     Engine/gameengine.h \
     Engine/screenmanager.h \
+    Engine/screenmanagerremotecontrol.h \
     Engine/soundengine.h
