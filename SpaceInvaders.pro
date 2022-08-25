@@ -22,6 +22,9 @@ SOURCES += \
         Engine/screenmanager.cpp \
         Engine/screenmanagerremotecontrol.cpp \
         Engine/soundengine.cpp \
+        Screens/button.cpp \
+        Screens/screenmanagerremotecontrol.cpp \
+        Screens/uipannel.cpp \
         main.cpp
 
 DISTFILES += \
@@ -42,4 +45,7 @@ HEADERS += \
     Engine/gameengine.h \
     Engine/screenmanager.h \
     Engine/screenmanagerremotecontrol.h \
-    Engine/soundengine.h
+    Engine/soundengine.h \
+    Screens/button.h \
+    Screens/screenmanagerremotecontrol.h \
+    Screens/uipannel.h

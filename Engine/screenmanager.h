@@ -5,7 +5,7 @@
 #include <map>
 #include <iostream>
 //#include "gamescreen.h"
-#include "screenmanagerremotecontrol.h"
+#include "Screens/screenmanagerremotecontrol.h"
 //#include "selectscreen.h"
 //#include "levelmanager.h"
 #include "bitmapstore.h"
@@ -26,11 +26,11 @@ public:
     void draw(RenderWindow& window);
     void handleInput(RenderWindow& window);
     ///From ScreenManagerRemoteControl interface:
-    void ScreenManagerRemoteControl::SwitchScreens(string screenToSwitchTo) {
+    void SwitchScreens(string screenToSwitchTo) override {
         m_CurrentScreen = "" + screenToSwitchTo;
         m_Screens[m_CurrentScreen]->initialise();
     }
-    void ScreenManagerRemoteControl::loadLevelInPlayMode(string screenToLoad) {
+    void loadLevelInPlayMode(string screenToLoad) override {
         //m_LevelManager.getGameObjects().clear();
         //m_LevelManager.loadGameObjectsForPlayMode(screenToLoad);
         SwitchScreens("Game");
