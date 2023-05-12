@@ -1,8 +1,8 @@
-#include "Engine/gameengine.h"
+#include "gameengine.h"
 
 int main()
 {
-    GameEngine gameEngine;
-    gameEngine.run();
+    GameEngine m_GameEngine;
+    m_GameEngine.run();
     return 0;
 }

@@ -2,12 +2,11 @@
 
 SoundEngine::SoundEngine()
 {
-    /// Buffers
     m_ShootBuffer.loadFromFile("sound/shoot.ogg");
     m_PlayerExplodeBuffer.loadFromFile("sound/playerexplode.ogg");
     m_InvaderExplodeBuffer.loadFromFile("sound/invaderexplode.ogg");
     m_ClickBuffer.loadFromFile("sound/click.ogg");
-    /// Sounds
+
     m_ShootSound.setBuffer(m_ShootBuffer);
     m_PlayerExplodeSound.setBuffer(m_PlayerExplodeBuffer);
     m_InvaderExplodeSound.setBuffer(m_InvaderExplodeBuffer);
@@ -34,7 +33,7 @@ void SoundEngine::playClick()
     m_ClickSound.play();
 }
 
-SoundEngine &SoundEngine::instance()
+SoundEngine SoundEngine::instance()
 {
     static SoundEngine se;
     return se;

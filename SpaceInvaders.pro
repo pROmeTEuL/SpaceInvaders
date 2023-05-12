@@ -1,5 +1,5 @@
 TEMPLATE = app
-CONFIG += console c++11
+CONFIG += console c++17
 CONFIG -= qt
 
 QMAKE_MACOSX_DEPLOYMENT_TARGET = 11.0
@@ -16,15 +16,13 @@ macx {
     LIBS += -ObjC
 }
 
+include(Engine/Engine.pri)
+include(FileIO/FileIO.pri)
+include(GameObjects/GameObjects.pri)
+include(Screens/Screens.pri)
+
+
 SOURCES += \
-        Engine/bitmapstore.cpp \
-        Engine/gameengine.cpp \
-        Engine/screenmanager.cpp \
-        Engine/screenmanagerremotecontrol.cpp \
-        Engine/soundengine.cpp \
-        Screens/button.cpp \
-        Screens/screenmanagerremotecontrol.cpp \
-        Screens/uipannel.cpp \
         main.cpp
 
 DISTFILES += \
@@ -38,14 +36,3 @@ DISTFILES += \
         sound/invaderexplode.ogg \
         sound/playerexplode.ogg \
         sound/shoot.ogg
-
-HEADERS += \
-    Engine/bitmapstore.h \
-    Engine/developstate.h \
-    Engine/gameengine.h \
-    Engine/screenmanager.h \
-    Engine/screenmanagerremotecontrol.h \
-    Engine/soundengine.h \
-    Screens/button.h \
-    Screens/screenmanagerremotecontrol.h \
-    Screens/uipannel.h

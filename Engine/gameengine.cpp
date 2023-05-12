@@ -1,8 +1,8 @@
 #include "gameengine.h"
 
-void GameEngine::input()
+void GameEngine::handleInput()
 {
-    m_ScreenManager->input(m_Window);
+    m_ScreenManager->handleInput(m_window);
 }
 
 void GameEngine::update()
@@ -12,25 +12,25 @@ void GameEngine::update()
 
 void GameEngine::draw()
 {
-    m_Window.clear(Color::Black);
-    m_ScreenManager->draw(m_Window);
-    m_Window.display();
+    m_window.clear(Color::Black);
+    m_ScreenManager->draw(m_window);
+    m_window.display();
 }
 
 GameEngine::GameEngine()
 {
-    m_Resolution.x = VideoMode::getDesktopMode().width;
-    m_Resolution.y = VideoMode::getDesktopMode().height;
-    m_Window.create(VideoMode(m_Resolution.x, m_Resolution.y), "Space Invders++", Style::Default);
-    m_ScreenManager = std::unique_ptr<ScreenManager> (new ScreenManager(Vector2i(m_Resolution)));
+    m_resolution.x = VideoMode::getDesktopMode().width;
+    m_resolution.y = VideoMode::getDesktopMode().height;
+    m_window.create(VideoMode(m_resolution.x, m_resolution.y), "Space Invaders++", Style::Fullscreen);
+    m_ScreenManager = std::unique_ptr<m_ScreenManager>(new ScreenManager(Vector2i(m_resolution.x, m_resolution.y)));
 }
 
 void GameEngine::run()
 {
-    while (m_Window.isOpen()) {
-        m_DT = m_Clock.restart();
-        m_FPS = m_DT.asSeconds();
-        input();
+    while (m_window.isOpen()) {
+        m_dt = m_clock.restart();
+        m_FPS = m_dt.asSeconds();
+        handleInput();
         update();
         draw();
     }
