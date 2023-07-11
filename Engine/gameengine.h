@@ -21,7 +21,6 @@ class GameEngine
     void update();
     void draw();
 public:
-    SoundEngine m_SoundEngine;
     GameEngine();
     void run();
 };

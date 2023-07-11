@@ -1,6 +1,6 @@
 #include "bitmapstore.h"
 
-BitmapStore BitmapStore::instance()
+BitmapStore &BitmapStore::instance()
 {
     static BitmapStore bs;
     return bs;

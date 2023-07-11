@@ -11,9 +11,9 @@ class BitmapStore
     std::map<std::string, Texture> m_BitmapsMap;
     BitmapStore() = default;
 public:
-    BitmapStore instance();
+    static BitmapStore& instance();
     Texture& getBitmap(const std::string& filename);
-    void addBitmap(const std::string& filename);
+//    void addBitmap(const std::string& filename);
 };
 
 #endif // BITMAPSTORE_H

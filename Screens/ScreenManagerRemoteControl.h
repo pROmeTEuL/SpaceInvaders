@@ -10,7 +10,7 @@ using namespace std;
 
 class ScreenManagerRemoteControl {
 public:
-    virtual void switchScreens(string screenToSwtichTo) = 0;
+    virtual void SwitchScreens(string screenToSwtichTo) = 0;
     virtual void loadLevelInPlayMode(string screenToLoad) = 0;
 //    virtual vector<GameObject>& getGameObjects() = 0;
 //    virtual GameObjectSharer& shareGameObjectsSharer() = 0;

@@ -1,5 +1,7 @@
 #include "inputhandler.h"
+#include "screen.h"
 #include <sstream>
+#include <iostream>
 
 
 void InputHandler::initialieseInputHandler(ScreenManagerRemoteControl *sw, vector<shared_ptr<Button> > buttons, View *pointerToUIView, Screen *parentScreen)
@@ -22,7 +24,9 @@ void InputHandler::handleInput(RenderWindow &window, Event &event)
 
     if (event.type == Event::MouseButtonReleased) {
         for (auto& it : m_Buttons) {
-            if (it->m_Collider.contains(window.mapPixelToCoords(Mouse::getPosition(), *getPointerToUIView()))) {
+            const auto pp = window.mapPixelToCoords(Mouse::getPosition(), *getPointerToUIView());
+            std::cout << "x:"<< pp.x<< ", y:"<< pp.y << std::endl;
+            if (it->m_Collider.contains(pp)) {
                 handleLeftClick(it->m_text, window);
                 break;
             }
@@ -46,7 +50,7 @@ void InputHandler::handleKeyReleased(Event &event, RenderWindow &window)
 
 }
 
-void InputHandler::handleLeftClick(string &buttonInteractWith, RenderWindow &window)
+void InputHandler::handleLeftClick(const string &buttonInteractWith, RenderWindow &window)
 {
 
 }

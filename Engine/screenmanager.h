@@ -3,7 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include <map>
 #include "gamescreen.h"
-#include "screenmanagerremotecontrol.h"
+#include "ScreenManagerRemoteControl.h"
 #include "selectscreen.h"
 //#include "levelmanager.h"
 #include "bitmapstore.h"
@@ -21,22 +21,12 @@ protected:
     string m_CurrentScreen = "Select";
 public:
     ScreenManager(Vector2i res);
-    BitmapStore m_BS;
     void update(float fps);
     void draw(RenderWindow& window);
     void handleInput(RenderWindow& window);
 public:
-    void ScreenManagerRemoteControl::SwitchScreens(string screenToSwitchTo)
-    {
-        m_CurrentScreen = "" + screenToSwitchTo;
-        m_Screens[m_CurrentScreen]->initialise();
-    }
-    void ScreenManagerRemoteControl::loadLevelInPLayMode(string screenToLoad)
-    {
-        //m_LevelManager.getGameObjects().clear();
-        //m_LevelManager.loadGameObjectsForPlayMode(screenToLoad);
-        SwitchScreens("Game");
-    }
+    void SwitchScreens(string screenToSwitchTo) override;
+    void loadLevelInPlayMode(string screenToLoad) override;
     /*
      vector<GameObject>& ScreenManagerRemoteControl::getGameObjects()
     {

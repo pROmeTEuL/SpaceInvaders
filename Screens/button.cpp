@@ -5,7 +5,7 @@ Button::Button(Vector2f position, float width, float height, unsigned int red, u
     m_Button.setPosition(position);
     m_Button.setFillColor(Color(red, green, blue));
     m_Button.setSize(Vector2f(width, height));
-    m_text = " " + text;
+    m_text = text;
     float textPaddingX = width / 10;
     float textPaddingY = height / 10;
     m_ButtonText.setCharacterSize(height * .7f);

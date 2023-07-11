@@ -20,12 +20,12 @@ class SoundEngine
     Sound m_OhSound;
     Sound m_ClickSound;
 
+public:
+    static SoundEngine& instance();
     void playShoot();
     void playPlayerExplode();
     void playInvaderExplode();
     void playClick();
-public:
-    SoundEngine instance();
 };
 
 #endif // SOUNDENGINE_H

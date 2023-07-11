@@ -3,11 +3,11 @@
 
 #include <SFML/Graphics.hpp>
 #include <vector>
-#include "inputhandler.h"
 #include "uipanel.h"
 #include "ScreenManagerRemoteControl.h"
 
 using namespace std;
+class InputHandler;
 
 class Screen
 {
@@ -16,6 +16,7 @@ class Screen
 protected:
     void addPanel(unique_ptr<UIPanel> p, ScreenManagerRemoteControl* smrc, shared_ptr<InputHandler> ih);
 public:
+    ~Screen();
     virtual void initialise();
     virtual void update(float fps);
     virtual void draw(RenderWindow& window);

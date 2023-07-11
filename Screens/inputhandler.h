@@ -5,7 +5,6 @@
 #include <memory>
 #include <vector>
 #include "button.h"
-//#include "screen.h"
 #include "ScreenManagerRemoteControl.h"
 
 using namespace sf;
@@ -29,7 +28,7 @@ public:
     virtual void handleGamepad();
     virtual void handleKeyPressed(Event& event, RenderWindow& window);
     virtual void handleKeyReleased(Event& event, RenderWindow& window);
-    virtual void handleLeftClick(string& buttonInteractWith, RenderWindow& window);
+    virtual void handleLeftClick(const string& buttonInteractWith, RenderWindow& window);
     View* getPointerToUIView();
     ScreenManagerRemoteControl* getPointerToScreenManagerRemoteControl();
     Screen* getPointerToScreen();

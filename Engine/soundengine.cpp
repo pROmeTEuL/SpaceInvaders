@@ -33,7 +33,7 @@ void SoundEngine::playClick()
     m_ClickSound.play();
 }
 
-SoundEngine SoundEngine::instance()
+SoundEngine &SoundEngine::instance()
 {
     static SoundEngine se;
     return se;

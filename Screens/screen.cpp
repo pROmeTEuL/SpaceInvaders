@@ -1,5 +1,7 @@
 #include "screen.h"
 
+#include "inputhandler.h"
+
 
 void Screen::addPanel(unique_ptr<UIPanel> p, ScreenManagerRemoteControl *smrc, shared_ptr<InputHandler> ih)
 {
@@ -7,6 +9,8 @@ void Screen::addPanel(unique_ptr<UIPanel> p, ScreenManagerRemoteControl *smrc, s
     m_Panels.push_back(move(p));
     m_InputHandlers.push_back(ih);
 }
+
+Screen::~Screen() = default;
 
 void Screen::initialise()
 {
