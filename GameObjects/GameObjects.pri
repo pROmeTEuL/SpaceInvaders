@@ -7,6 +7,7 @@ HEADERS += \
     $$PWD/component.h \
     $$PWD/graphicscomponent.h \
     $$PWD/invaderupdatecomponent.h \
+    $$PWD/playerupdatecomponent.h \
     $$PWD/rectcollidercomponent.h \
     $$PWD/standardgraphicscomponent.h \
     $$PWD/transformcomponent.h \
@@ -17,6 +18,7 @@ SOURCES += \
     $$PWD/collidercomponent.cpp \
     $$PWD/graphicscomponent.cpp \
     $$PWD/invaderupdatecomponent.cpp \
+    $$PWD/playerupdatecomponent.cpp \
     $$PWD/rectcollidercomponent.cpp \
     $$PWD/standardgraphicscomponent.cpp \
     $$PWD/transformcomponent.cpp \
